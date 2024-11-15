@@ -3,7 +3,7 @@ import { Button } from "./components/ui/button";
 function App() {
   return (
     <>
-      <div className="bg-red-500 p-2">
+      <div>
         <Button>Ask AI</Button>
       </div>
     </>

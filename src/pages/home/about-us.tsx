@@ -40,7 +40,7 @@ const AboutUs: React.FC = () => {
     },
   });
 
-  // submit handler.
+  // submit handler
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
@@ -49,8 +49,10 @@ const AboutUs: React.FC = () => {
     <>
       <div className="main space-y-12 mt-40">
         <div className="">
-          <h1 className="text-3xl font-medium text-center">About Us</h1>
-          <p className="text-base font-light text-center pt-2 leading-5">
+          <h1 className="text-3xl font-medium text-center sm:text-4xl">
+            About Us
+          </h1>
+          <p className="text-base font-light text-center pt-2 leading-5 sm:text-lg">
             NextGen Technologies specializes in providing seamless consulting
             services and end-to-end custom solutions to simplify <br /> the
             complexities of modern business operations.
@@ -64,13 +66,13 @@ const AboutUs: React.FC = () => {
             className="absolute inset-0 bg-black/10 bg-opacity-40"
             style={{ zIndex: -1 }}
           ></div>
-          <div className="relative rounded-lg shadow-lg w-1/2 m-auto space-y-12">
-            <h1 className="text-3xl font-medium text-white space-y-4">
-              Ready To Take Business To <br />{" "}
+          <div className="relative rounded-lg shadow-lg w-full sm:w-4/6 lg:w-1/2 m-auto space-y-12 p-6 sm:p-8">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white space-y-4">
+              Ready To Take Business To <br />
               <span className="text-indigo-600">Next Level ?</span>
-              <p className="text-sm">
-                Contact us today for consultation or a ddep dive into our
-                services
+              <p className="text-sm sm:text-base">
+                Contact us today for consultation or a deep dive into our
+                services.
               </p>
             </h1>
             <Form {...form}>

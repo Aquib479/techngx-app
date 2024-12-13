@@ -1,0 +1,23 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.client-card-gradient {
+  background: linear-gradient(111.08deg, #001242 20.88%, #bbcdf9 171.35%);
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.vector-image-container {
+  background: url("../assets/vector.webp") no-repeat center center/cover;
+}
+
+.first-gradient {
+  background: linear-gradient(271.08deg, #dddddd63 3.72%, #d0cfcf 136.16%);
+}
+
+.second-gradient {
+  background: linear-gradient(271.08deg, #495c8a 3.72%, #001859 56.96%);
+}

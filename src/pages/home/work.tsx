@@ -1,17 +1,16 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const Work: React.FC = () => {
   return (
     <>
-      <div className="min-h-screen font-extralight flex flex-col items-center gap-8 py-16 w-5/6 m-auto">
-        <h2 className="text-3xl text-gray-800 font-medium">
+      <div className="min-h-screen font-extralight flex flex-col items-center gap-8 py-16 px-4 w-full lg:w-5/6 m-auto">
+        <h2 className="text-2xl md:text-3xl text-gray-800 font-medium text-center">
           Smart Payments & Onboarding
         </h2>
-        <div className="col-span-2 space-y-1">
-          <p className="text-base text-center">
+        <div className="space-y-4 px-4 text-center">
+          <p className="text-sm md:text-base">
             Next-generation payment and onboarding methods aim to provide
             seamless, secure, and intuitive user experiences. By integrating
             advanced technologies like biometric authentication, tokenization,
@@ -22,7 +21,7 @@ const Work: React.FC = () => {
           </p>
         </div>
 
-        <div className="flex gap-6 mt-8">
+        <div className="flex flex-wrap justify-center gap-6 mt-8">
           <Card
             image="/assets/h1.jpg"
             title="Next Generation Payments Platform"
@@ -47,8 +46,6 @@ interface CardProps {
   heading: string;
   content: string;
 }
-
-export default Work;
 
 const Card = ({ image, title, heading, content }: CardProps) => {
   const gradientRef = useRef<HTMLDivElement>(null);
@@ -77,23 +74,23 @@ const Card = ({ image, title, heading, content }: CardProps) => {
   };
 
   return (
-    <motion.div className="relative group w-96 h-96 rounded-lg overflow-hidden shadow-md">
-      <div className="">
+    <motion.div className="relative group sm:w-full md:w-80 lg:w-96 h-96 rounded-lg overflow-hidden shadow-md">
+      <div>
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
 
       {/* Gradient Animation */}
       <div
         ref={gradientRef}
-        className="absolute overflow-hidden inset-0 client-card-gradient text-white p-10 space-y-4"
+        className="absolute inset-0 client-card-gradient text-white p-6 space-y-4 overflow-hidden"
       >
-        <h1 className="text-2xl mt-6">{heading}</h1>
-        <p className="text-sm leading-[1.4rem]">{content}</p>
+        <h1 className="text-lg md:text-2xl mt-4">{heading}</h1>
+        <p className="text-xs md:text-sm leading-[1.4rem]">{content}</p>
         <div className="absolute right-0 -bottom-28">
           <img
             src="/assets/Group.png"
             alt="lines.."
-            className="w-[600px] h-[400px] object-cover"
+            className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] object-cover"
             style={{
               filter: "invert(1) brightness(2)",
             }}
@@ -102,9 +99,11 @@ const Card = ({ image, title, heading, content }: CardProps) => {
       </div>
 
       {/* Content Overlay */}
-      <div className="flex flex-col justify-between p-6 z-10 cursor-pointer">
+      <div className="flex flex-col justify-between p-4 z-10 cursor-pointer">
         <div>
-          <h3 className="text-2xl text-center font-medium">{title}</h3>
+          <h3 className="text-lg md:text-2xl text-center font-medium">
+            {title}
+          </h3>
         </div>
         <motion.div
           onClick={isGradientUp ? handleHoverEnd : handleHoverStart}
@@ -113,15 +112,14 @@ const Card = ({ image, title, heading, content }: CardProps) => {
           }}
         >
           <div
-            className={`absolute left-[45%] z-20 self-center bg-indigo-600 w-10 h-10 rounded-full shadow-lg
-                 flex items-center justify-center text-white ${
-                   isGradientUp ? "-top-5" : "-bottom-5"
-                 }`}
+            className={`absolute left-[45%] z-20 bg-indigo-600 w-8 h-8 md:w-10 md:h-10 rounded-full shadow-lg flex items-center justify-center text-white ${
+              isGradientUp ? "-top-4" : "-bottom-4"
+            }`}
           >
             {isGradientUp ? (
-              <ChevronDown className="mt-4" />
+              <ChevronDown className="mt-2 md:mt-4" />
             ) : (
-              <ChevronUp className="mb-4" />
+              <ChevronUp className="mb-2 md:mb-4" />
             )}
           </div>
         </motion.div>
@@ -129,3 +127,5 @@ const Card = ({ image, title, heading, content }: CardProps) => {
     </motion.div>
   );
 };
+
+export default Work;

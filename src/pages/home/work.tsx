@@ -76,7 +76,12 @@ const Card = ({ image, title, heading, content }: CardProps) => {
   return (
     <motion.div className="relative group sm:w-full md:w-80 lg:w-96 h-96 rounded-lg overflow-hidden shadow-md">
       <div>
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
 
       {/* Gradient Animation */}
@@ -94,6 +99,7 @@ const Card = ({ image, title, heading, content }: CardProps) => {
             style={{
               filter: "invert(1) brightness(2)",
             }}
+            loading="lazy"
           />
         </div>
       </div>

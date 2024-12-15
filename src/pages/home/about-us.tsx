@@ -12,6 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { Fade } from "react-awesome-reveal";
 
 const AboutUs: React.FC = () => {
   const formSchema = z.object({
@@ -67,85 +68,89 @@ const AboutUs: React.FC = () => {
             style={{ zIndex: -1 }}
           ></div>
           <div className="relative rounded-lg shadow-lg w-full sm:w-4/6 lg:w-1/2 m-auto space-y-12 p-6 sm:p-8">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white space-y-4">
-              Ready To Take Business To <br />
-              <span className="text-indigo-600">Next Level ?</span>
-              <p className="text-sm sm:text-base">
-                Contact us today for consultation or a deep dive into our
-                services.
-              </p>
-            </h1>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-4"
-              >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem className="space-y-2">
-                      <FormLabel className="flex justify-start text-white">
-                        Name <span className="text-red-500 px-1">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Name"
-                          {...field}
-                          className="h-12 bg-white/80 border-0"
-                        />
-                      </FormControl>
-                      <FormMessage className="flex justify-start text-red-500" />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem className="space-y-2">
-                      <FormLabel className="flex justify-start text-white">
-                        Email <span className="text-red-500 px-1">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Email"
-                          {...field}
-                          className="h-12 bg-white/80 border-0"
-                        />
-                      </FormControl>
-                      <FormMessage className="flex justify-start text-red-500" />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="user_message"
-                  render={({ field }) => (
-                    <FormItem className="space-y-2">
-                      <FormLabel className="flex justify-start text-white">
-                        Message <span className="text-red-500 px-1">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Enter your message"
-                          className="resize-none bg-white/80 border-0 h-28"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="flex justify-start text-red-500" />
-                    </FormItem>
-                  )}
-                />
-                <Button
-                  variant="default"
-                  className="bg-indigo-600 px-8 hover:bg-indigo-700 flex justify-start"
-                  type="submit"
+            <Fade delay={300} direction="up" triggerOnce cascade>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white space-y-4">
+                Ready To Take Business To <br />
+                <span className="text-indigo-600">Next Level ?</span>
+                <p className="text-sm sm:text-base">
+                  Contact us today for consultation or a deep dive into our
+                  services.
+                </p>
+              </h1>
+            </Fade>
+            <Fade delay={300} direction="up" triggerOnce cascade>
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-4"
                 >
-                  Submit
-                </Button>
-              </form>
-            </Form>
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="flex justify-start text-white">
+                          Name <span className="text-red-500 px-1">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Name"
+                            {...field}
+                            className="h-12 bg-white/80 border-0"
+                          />
+                        </FormControl>
+                        <FormMessage className="flex justify-start text-red-500" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="flex justify-start text-white">
+                          Email <span className="text-red-500 px-1">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Email"
+                            {...field}
+                            className="h-12 bg-white/80 border-0"
+                          />
+                        </FormControl>
+                        <FormMessage className="flex justify-start text-red-500" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="user_message"
+                    render={({ field }) => (
+                      <FormItem className="space-y-2">
+                        <FormLabel className="flex justify-start text-white">
+                          Message <span className="text-red-500 px-1">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Enter your message"
+                            className="resize-none bg-white/80 border-0 h-28"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage className="flex justify-start text-red-500" />
+                      </FormItem>
+                    )}
+                  />
+                  <Button
+                    variant="default"
+                    className="bg-indigo-600 px-8 hover:bg-indigo-700 flex justify-start"
+                    type="submit"
+                  >
+                    Submit
+                  </Button>
+                </form>
+              </Form>
+            </Fade>
           </div>
         </div>
       </div>

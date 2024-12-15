@@ -20,7 +20,7 @@ const Home: React.FC = () => {
             <div
               className="absolute text-white space-y-4 px-4 md:px-0"
               style={{
-                bottom: "10%",
+                bottom: "25%",
                 left: "50%",
                 transform: "translateX(-50%)",
               }}
